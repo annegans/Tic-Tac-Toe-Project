@@ -1,7 +1,5 @@
-console.log("hello")
-
 $(document).ready(function(){
- console.log("ready") 
+ 
 //Set Players
 var player1 = "x";
 
@@ -132,19 +130,18 @@ var inputB9 = $("#b9").on('click', function(){
   });
 
 function complete(){
-  console.log("i'm complete")
-  if (turn === 9){
+  // if (turn === 9){
     finalScore();
-    console.log("hello")
-  }else{
-    console.log("it's working")
-  }
+  // }else{
+  // }
 }
 
 function finalScore(){
 
   if ((inputB1 === inputB2) && (inputB2 ===inputB3)){
     console.log('winner');
+    // if ((inputB1 === 'x') && (inputB2 === 'x') && (nputB3 && 'x') || (inputB1 === '0') && (inputB2 === 'o') && (nputB3 && 'o')  ){
+    // console.log('winner');
   }else if ((inputB4 === inputB5) && (inputB5 === inputB6)){
     console.log('winner');
   }else if ((inputB7 === inputB8) && (inputB8 === inputB9)){
@@ -153,8 +150,12 @@ function finalScore(){
     console.log('winner');
   }else if ((inputB3 === inputB5) && (inputB5 === inputB7)){
     console.log('winner');
+  }else if ((inputB1 === inputB4) && (inputB4 === inputB7)){
+    console.log('winner'); 
+  }else if ((inputB3 === inputB6) && (inputB6 === inputB9)){
+    console.log('winner');   
   }else{
-    console.log('loser');   
+    console.log('carry on going');   
   }
     
   
