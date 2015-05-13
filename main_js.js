@@ -1,4 +1,7 @@
 
+ //js code for Tic Tac Toe 
+
+ //looks true two array's for similair values
 function intersect(a, b) {
   var t;
   if (b.length > a.length) t = b, b = a, a = t; 
@@ -7,8 +10,8 @@ function intersect(a, b) {
   });
 }
 
-var player1 = "x";
-var player2 = "o";
+var player1 = "X";
+var player2 = "O";
 var xMoves = [];
 var oMoves = [];
 var turn = 0;
@@ -18,7 +21,7 @@ var winningLines =[
 
 $(document).ready(function(){
  
-  //Get Box's
+  //Get Box's input box even and odd
   var inputBox = $(".box").on('click', function(){
     if (turn%2 === 0){
         inputBox = player1
@@ -29,55 +32,42 @@ $(document).ready(function(){
       }
          turn++;
       
-    // console.log(inputBox)
-
+    //console.log(inputBox)
+    //Show Box on the page 
     $(this).html(inputBox); 
     winners(); 
   });
 
-
+    //Get winner 
 function winners(){
   // console.log('hello')
+  //loops true the array//unbined click 
   $.each(winningLines, function(index, value){
    var xSame = intersect(value, xMoves)
    var oSame = intersect(value, oMoves)
     
    if(xSame.length === 3){
-    console.log("Winner X")
+    var result = "Winner X";
+    $('.box').unbind('click');
    }else if(oSame.length === 3){
-    console.log("Winner o")
+    var result = "Winner O";
+    $('.box').unbind('click');
+   }else if(xMoves.length === 5){
+    var result = "Tie";
+    $('.box').unbind('click');
    }
-   
-    // console.log(same)
-    
+   //show winner on the page 
+   $(".results").html(result);
+     
   });  
 }
+
+//reset
+function reset(){
+}
  
-
-
-  // function winner(){
-   
-
-    // $('winninglines').each(function(index, value){
-    //   debugger;
-    //   // if (xMoves === winningLines){
-      // console.log("winner");
-     
-      // var result = winningLines.every(function(element, index, array) {
-      //   console.log('index:', index);
-      //   if (element === xMoves) {
-      //      console.log("winner x");
-      //  }else if (element === oMoves){
-      //     console.log('winner o')
-      //  }else{
-      //   console.log('tie')
-  //     //  }
-      
-  //    // });
-  // } 
-    
-  
-
 });
+
+
 
   
