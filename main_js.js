@@ -1,167 +1,83 @@
+
+function intersect(a, b) {
+  var t;
+  if (b.length > a.length) t = b, b = a, a = t; 
+  return a.filter(function (e) {
+  if (b.indexOf(e) !== -1) return true;
+  });
+}
+
+var player1 = "x";
+var player2 = "o";
+var xMoves = [];
+var oMoves = [];
+var turn = 0;
+var winningLines =[
+["b1", "b2", "b3"], ["b4", "b5", "b6"], ["b7", "b8", "b9"], ["b1", "b4", "b7"], ["b2", "b5", "b8"], ["b3", "b6", "b9"], ["b1", "b5", "b9"], ["b3", "b5", "b7"]
+]
+
 $(document).ready(function(){
  
-//Set Players
-var player1 = "x";
-
-var player2 = "o";
-///set Turn
-var turn = 0 ;
-
-//Get Box's
-var inputB1 = $("#b1").on('click', function(){
+  //Get Box's
+  var inputBox = $(".box").on('click', function(){
     if (turn%2 === 0){
-      inputB1 = player1
-    }else{
-     inputB1 = player2
-    }
-       turn++;
-  
-  console.log(inputB1)
-
-  $("#b1").html(inputB1);
-  
-  complete();
-
-});
-
-var inputB2 = $("#b2").on('click', function(){
-    if (turn%2 === 0){
-    inputB2 = player1
+        inputBox = player1
+        xMoves.push(this.id)
       }else{
-     inputB2 = player2
+       inputBox = player2
+        oMoves.push(this.id)
       }
-       turn++;
+         turn++;
+      
+    // console.log(inputBox)
+
+    $(this).html(inputBox); 
+    winners(); 
+  });
+
+
+function winners(){
+  // console.log('hello')
+  $.each(winningLines, function(index, value){
+   var xSame = intersect(value, xMoves)
+   var oSame = intersect(value, oMoves)
     
-    $("#b2").html(inputB2);   
-    console.log(inputB2)
-    complete();
-});
+   if(xSame.length === 3){
+    console.log("Winner X")
+   }else if(oSame.length === 3){
+    console.log("Winner o")
+   }
+   
+    // console.log(same)
+    
+  });  
+}
+ 
 
-var inputB3 = $("#b3").on('click', function(){
-    if (turn%2 === 0){
-    inputB3 = player1
-      }else{
-     inputB3 = player2
-      }
-       turn++;
 
-    console.log(inputB3)
-    $("#b3").html(inputB3);
-    complete(); 
-});
+  // function winner(){
    
 
-var inputB4 = $("#b4").on('click', function(){
-    if (turn%2 === 0){
-    inputB4 = player1
-    }else{
-     inputB4 = player2
-    }
-       turn++;
-
-    console.log(inputB4)
-    $("#b4").html(inputB4);
-    complete();
-  });
-    
-var inputB5 = $("#b5").on('click', function(){
-    if (turn%2 === 0){
-    inputB5 = player1
-    }else{
-     inputB5 = player2
-    }
-       turn++;
-
-    console.log(inputB5)
-    $("#b5").html(inputB5);
-    complete();
-  });
-
-var inputB6 = $("#b6").on('click', function(){
-    if (turn%2 === 0){
-    inputB6 = player1
-      }else{
-     inputB6 = player2
-      }
-       turn++;
-
-    console.log(inputB6)
-    $("#b6").html(inputB6);
-    complete();
-  });
-
-var inputB7 = $("#b7").on('click', function(){
-    if (turn%2 === 0){
-    inputB7 = player1
-      }else{
-     inputB7 = player2
-      }
-       turn++;
-
-    console.log(inputB7)
-    $("#b7").html(inputB7);
-    complete();
-  });
-
-var inputB8 = $("#b8").on('click', function(){
-    if (turn%2 === 0){
-    inputB8 = player1
-      }else{
-     inputB8 = player2
-      }
-       turn++;
-
-    console.log(inputB8)
-    $("#b8").html(inputB8);
-    complete();
-  });
-
-var inputB9 = $("#b9").on('click', function(){
-    if (turn%2 === 0){
-    inputB9 = player1
-      }else{
-     inputB9 = player2
-      }
-       turn++;
-
-    console.log(inputB9)
-    $("#b9").html(inputB9);
-    complete();
-  });
-
-function complete(){
-  // if (turn === 9){
-    finalScore();
-  // }else{
-  // }
-}
-
-function finalScore(){
-
-  if ((inputB1 === inputB2) && (inputB2 ===inputB3)){
-    console.log('winner');
-    // if ((inputB1 === 'x') && (inputB2 === 'x') && (nputB3 && 'x') || (inputB1 === '0') && (inputB2 === 'o') && (nputB3 && 'o')  ){
-    // console.log('winner');
-  }else if ((inputB4 === inputB5) && (inputB5 === inputB6)){
-    console.log('winner');
-  }else if ((inputB7 === inputB8) && (inputB8 === inputB9)){
-    console.log('winner');
-  }else if ((inputB1 === inputB5) && (inputB5 === inputB9)){
-    console.log('winner');
-  }else if ((inputB3 === inputB5) && (inputB5 === inputB7)){
-    console.log('winner');
-  }else if ((inputB1 === inputB4) && (inputB4 === inputB7)){
-    console.log('winner'); 
-  }else if ((inputB3 === inputB6) && (inputB6 === inputB9)){
-    console.log('winner');   
-  }else{
-    console.log('carry on going');   
-  }
+    // $('winninglines').each(function(index, value){
+    //   debugger;
+    //   // if (xMoves === winningLines){
+      // console.log("winner");
+     
+      // var result = winningLines.every(function(element, index, array) {
+      //   console.log('index:', index);
+      //   if (element === xMoves) {
+      //      console.log("winner x");
+      //  }else if (element === oMoves){
+      //     console.log('winner o')
+      //  }else{
+      //   console.log('tie')
+  //     //  }
+      
+  //    // });
+  // } 
     
   
-}
-complete();
-});
 
+});
 
   
