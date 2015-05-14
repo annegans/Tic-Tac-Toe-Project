@@ -26,9 +26,11 @@ $(document).ready(function(){
     if (turn%2 === 0){
         inputBox = player1
         xMoves.push(this.id)
+        $(this).addClass('red')
       }else{
        inputBox = player2
         oMoves.push(this.id)
+       $(this).addClass('blue') 
       }
          turn++;
       
@@ -42,31 +44,54 @@ $(document).ready(function(){
 function winners(){
   // console.log('hello')
   //loops true the array//unbined click 
-  $.each(winningLines, function(index, value){
+  var result;
+  console.log('------------')
+  var winLoseResult = winningLines.some(function(value){
    var xSame = intersect(value, xMoves)
    var oSame = intersect(value, oMoves)
-    
+   console.log(xSame, oSame, xMoves);
    if(xSame.length === 3){
-    var result = "Winner X";
-    $('.box').unbind('click');
+    console.log('I am being run;')
+    result = "PLAYER 1 <b> X WINS";
+    $('.box').unbind('click'); 
+    return true;
    }else if(oSame.length === 3){
-    var result = "Winner O";
+    result = "PLAYER 2 : O WINS";
     $('.box').unbind('click');
-   }else if(xMoves.length === 5){
-    var result = "Tie";
-    $('.box').unbind('click');
+    return true;
    }
-   //show winner on the page 
-   $(".results").html(result);
-     
-  });  
+   //show winner on the page      
+  });
+ 
+  if ((!winLoseResult) && xMoves.length === 5) {
+    result = "IT'S A TIE"
+  };
+
+  $(".results").html(result);  
 }
 
-//reset
-function reset(){
-}
- 
+
+
+$('.title').on('click', function(){
+  console.log("kjbsfd")
+  $('.box').each(function(index, element){
+    if($(element).hasClass( "red" )){
+      $(element).removeClass('red');
+      $(element).html('')
+      xMoves=[]
+    }
+    else if($(element).hasClass( "blue" )){
+      $(element).removeClass('blue');
+      $(element).html('')
+      oMoves=[]
+    }
+    
+  }) 
+
 });
+
+});
+
 
 
 
