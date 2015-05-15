@@ -1,0 +1,62 @@
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+body{
+
+  background-image: linear-gradient(transparent 1px, transparent 1px),
+  linear-gradient(90deg, transparent 1px, transparent 1px),
+  linear-gradient(rgb(256,225,255)  1px, transparent 1px),
+  linear-gradient(90deg, rgb(256,225,255) 1px, transparent 1px);
+  background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px
+}
+
+#allbox{
+  margin-left: 4.5px;
+  margin-top: -8px;
+
+}
+.square {
+
+  width: 40px;
+  height: 35px;
+  padding: 43px;
+  border: 3px solid rgb(256,225,255);
+  display: inline-block;
+  margin: -0.2%;
+  background-color: none;
+  vertical-align: top;
+  font-family:'Inconsolata';
+  font-size: 70px;
+  text-align: center;
+}
+
+.box{
+
+  width: 40px;
+  height: 35px;
+  padding: 43px;
+  border: 3px solid rgb(256,225,255);
+  display: inline-block;
+  margin: -0.2%;
+  vertical-align: top;
+  font-family:'Inconsolata';
+  font-size: 70px;
+  text-align: center;
+}
+
+.blue{
+font-family:'Inconsolata';
+}
+
+.red{
+font-family: 'Inconsolata';
+}
+
+
+.invisble{
+  visibility: hidden;
+}
+
+
+
+
+
