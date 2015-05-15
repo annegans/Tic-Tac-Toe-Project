@@ -42,17 +42,48 @@ $(document).ready(function(){
     //Get winner loops true the array//unbined click 
 function winners(){
   var result;
-  console.log('------------')
   var winLoseResult = winningLines.some(function(value){
-   var xSame = intersect(value, xMoves)
-   var oSame = intersect(value, oMoves)
-   console.log(xSame, oSame, xMoves);
+  var xSame = intersect(value, xMoves)
+  var oSame = intersect(value, oMoves)
+
    if(xSame.length === 3){
-    console.log('I am being run;')
-    result = "PLAYER 1 <b> X WINS";
+    // $(".square").addClass('hello');
+    $('#l1').text('');
+    $('#l2').text('');
+    $('#l3').text('');
+    $('#l4').text('');
+    $('#l5').text('');
+    $('#l6').text('');
+    $('#l7').text('');
+    $('#l8').text('');
+    $('#l9').text('');
+    $('.box').text('');
+    $('#lxo').html("X");
+    $('#l5').html("W");
+    $('#l6').html("I");
+    $('#ln').html("N");
+    $('#l7').html("S");
+    
+    result = "PLAYER 1 : X WINS";
     $('.box').off('click'); 
     return true;
+
    }else if(oSame.length === 3){
+    $('#l1').text('');
+    $('#l2').text('');
+    $('#l3').text('');
+    $('#l4').text('');
+    $('#l5').text('');
+    $('#l6').text('');
+    $('#l7').text('');
+    $('#l8').text('');
+    $('#l9').text('');
+    $('.box').text('');
+    $('#lxo').html("O");
+    $('#l5').html("W");
+    $('#l6').html("I");
+    $('#ln').html("N");
+    $('#l7').html("S");
     result = "PLAYER 2 : O WINS";
     $('.box').off('click');
     return true;
@@ -62,10 +93,24 @@ function winners(){
  
   if ((!winLoseResult) && xMoves.length === 5) {
     result = "IT'S A TIE"
-    console.log(result)
+    $('#l1').text('');
+    $('#l2').text('');
+    $('#l3').text('');
+    $('#l4').text('');
+    $('#l5').text('');
+    $('#l6').text('');
+    $('#l7').text('');
+    $('#l8').text('');
+    $('#l9').text('');
+    $('.box').text('');
+    $('#l4').html("T");
+    $('#l5').html("I");
+    $('#l6').html("E");
+    
   };
 
   $(".results").html(result);  
+  console.log(result)
 }
 
 
@@ -83,7 +128,7 @@ $('.title').on('click', function(){
       $(element).removeClass('blue');
       $(element).html('')
       oMoves=[]
-      turn = 0
+      turn =0
     }  
   }) 
 });
@@ -123,9 +168,8 @@ $(".square").on('click', function(){
   $('#text7').text('');
   $('#text8').text('');
   $('#text9').text('');
-
-
-  
+ 
 });
 
 });
+

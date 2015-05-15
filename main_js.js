@@ -59,7 +59,6 @@ function winners(){
    }else if(oSame.length === 3){
     result = "PLAYER 2 : O WINS";
     $('.box').off('click');
-    debugger
     return true;
    }
    //show winner on the page      
