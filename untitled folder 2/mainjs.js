@@ -77,20 +77,22 @@ $('.title').on('click', function(){
       $(element).removeClass('red');
       $(element).html('')
       xMoves=[]
+      turn = 0
     }
     else if($(element).hasClass( "blue" )){
       $(element).removeClass('blue');
       $(element).html('')
       oMoves=[]
+      turn = 0
     }  
   }) 
 });
 
-var randomLinks = $('#allbox .square');
-var original = randomLinks.css('background-color');
+var boxes = $('#allbox .square');
+var original = boxes.css('background-color');
 var colors = ['rgba(205,255,254,0.5)', 'rgba(255,180,239,0.5', 'rgba(126,178,177,0.5)', 'rgba(128,204,201,0.5)', 'rgba(39,178,173,0.5)', 'rgba(144,255,254,0.5)', 'rgba(255,169,246,0.5)', 'rgba(83,178,169,0.5)', 'rgba(160,186,255,0.5)', 'rgba(71,178,174,0.5)','rgba(126,255,250,0.5)','rgba(255,246,97,0.5)','rgba(255,113,87,0.5)','rgba(255,152,97,0.5)','rgba(120,54,127,0.5)','rgba(255,152,97,0.5)','rgba(255,111,97,0.5)','rgba(255,181,173,0.5)', ];
 
-randomLinks.hover(function () { //mouseover
+boxes.hover(function () { //mouseover
     var col2 = Math.floor(Math.random() * colors.length);
     var newcolor = colors[col2];
     $(this).css('background-color', newcolor);

@@ -16,9 +16,9 @@ body{
 }
 .square {
 
-  width: 40px;
+  width: 49px;
   height: 35px;
-  padding: 43px;
+  padding: 38px;
   border: 3px solid rgb(256,225,255);
   display: inline-block;
   margin: -0.2%;
@@ -27,13 +27,14 @@ body{
   font-family:'Inconsolata';
   font-size: 70px;
   text-align: center;
+  line-height: 35px;
 }
 
 .box{
 
-  width: 40px;
+  width: 49px;
   height: 35px;
-  padding: 43px;
+  padding: 38px;
   border: 3px solid rgb(256,225,255);
   display: inline-block;
   margin: -0.2%;
@@ -41,6 +42,7 @@ body{
   font-family:'Inconsolata';
   font-size: 70px;
   text-align: center;
+  line-height: 35px;
 }
 
 .blue{
@@ -57,6 +59,70 @@ font-family: 'Inconsolata';
 }
 
 
+#text1{
+color:rgba(205,255,254,1)
+}
+#text2{
+color:rgba(255,180,239,1)
+}
+#text3{
+color:rgba(128,204,201,1)
+}
+#text4{
+color:rgba(83,178,169,1)
+}
+#text5{
+color:rgba(126,255,250,1)
+}
+#text6{
+color:rgba(255,246,97,1)
+}
+#text7{
+color:rgba(120,54,127,1)
+}
+#text8{
+color:rgba(255,181,173,1)
+}
+#text9{
+color:rgba(71,178,174,1)
+}
 
+#l1{
+color:rgba(205,255,254,1)
 
+}
 
+#l2{
+color:rgba(71,178,174,1)  
+}
+
+#l3{
+color:rgba(120,54,127,1) 
+}
+
+#l4{
+color:rgba(255,246,97,1)  
+}
+
+#l5{
+color:rgba(128,204,201,1)  
+}
+
+#l6{
+color:rgba(83,178,169,1)  
+}
+
+#l7{
+color:rgba(205,255,254,1)  
+}
+
+#l8{
+color:rgba(128,204,201,1)  
+}
+
+#l9{
+color:rgba(120,54,127,1)    
+}
+/*
+'rgba(205,255,254,0.5)', 'rgba(255,180,239,0.5', 'rgba(126,178,177,0.5)', 'rgba(128,204,201,0.5)', 'rgba(39,178,173,0.5)', 'rgba(144,255,254,0.5)', 'rgba(255,169,246,0.5)', 'rgba(83,178,169,0.5)', 'rgba(160,186,255,0.5)', 'rgba(71,178,174,0.5)','rgba(126,255,250,0.5)','rgba(255,246,97,0.5)','rgba(255,113,87,0.5)','rgba(255,152,97,0.5)','rgba(120,54,127,0.5)','rgba(255,152,97,0.5)','rgba(255,111,97,0.5)','rgba(255,181,173,0.5)',
+*/

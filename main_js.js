@@ -22,9 +22,9 @@ var winningLines =[
 $(document).ready(function(){
  
   //Get Box's input box even and odd
-  var inputBox = $(".box").on('click', function(){
+ $(".box").on('click', function(){
     if (turn%2 === 0){
-        inputBox = player1
+        var inputBox = player1
         xMoves.push(this.id)
         $(this).addClass('red')
       }else{
@@ -40,6 +40,7 @@ $(document).ready(function(){
     winners(); 
   });
 
+
     //Get winner 
 function winners(){
   // console.log('hello')
@@ -53,11 +54,12 @@ function winners(){
    if(xSame.length === 3){
     console.log('I am being run;')
     result = "PLAYER 1 <b> X WINS";
-    $('.box').unbind('click'); 
+    $('.box').off('click'); 
     return true;
    }else if(oSame.length === 3){
     result = "PLAYER 2 : O WINS";
-    $('.box').unbind('click');
+    $('.box').off('click');
+    debugger
     return true;
    }
    //show winner on the page      
@@ -74,16 +76,20 @@ function winners(){
 
 $('.title').on('click', function(){
   console.log("kjbsfd")
+  $('.box').on('click');
   $('.box').each(function(index, element){
     if($(element).hasClass( "red" )){
       $(element).removeClass('red');
       $(element).html('')
       xMoves=[]
+      turn =0
     }
     else if($(element).hasClass( "blue" )){
       $(element).removeClass('blue');
       $(element).html('')
       oMoves=[]
+      turn =0
+
     }
     
   }) 

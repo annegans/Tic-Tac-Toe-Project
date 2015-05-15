@@ -1,7 +1,16 @@
 @import url(http://fonts.googleapis.com/css?family=Paytone+One);
 
 body{
-  background-color: black;
+/*background-color:blue;
+background-image: linear-gradient(transparent 1px, transparent 1px),
+linear-gradient(90deg, transparent 1px, transparent 1px),
+linear-gradient(black 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
+background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px
+}*/
+
+background-color: black
 }
 
 @font-face {
@@ -28,7 +37,7 @@ h1 {
 }
 
 h1:hover{
-  color:#FF1177;
+  color:red;
   -webkit-animation: none;
   -moz-animation: none;
   animation: none; 
